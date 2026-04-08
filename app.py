@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # 1. API 키 설정 (쌍따옴표 " " 사이에 발급받은 키를 꼭! 넣어주세요)
-genai.configure(api_key="st.cecretsAIzaSyAJEal-HwMqXm7Ye1x_adnq8Pj2Uzt_gOA")
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # 빠르고 가벼운 모델 사용
 model = genai.GenerativeModel('gemini-2.5-flash') 
@@ -38,3 +38,4 @@ if st.button("승혜가 알아먹을수 있는 언어로 번역하기"):
             st.write(response.text)
     else:
         st.warning("야구 용어를 먼저 입력해 주세요!")
+
